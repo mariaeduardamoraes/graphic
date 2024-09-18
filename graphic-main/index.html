@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Sociais</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Acidentes com automóveis em 2023</h1>
+        <nav>
+            <a href="index.html">Mundo</a>
+            <a href="#">Minha escola</a>
+        </nav>
+    </header>
+
+    <main class="graficos-section">
+        <section id="graficos-container" class="graficos-container">
+            <div id="grafico-acidentes"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por...</p>
+    </footer>
+    
+    <script type="module">
+        // Dados corretos de acidentes
+        const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+        const acidentes = [120, 150, 130, 170, 200, 180, 160, 190, 210, 220, 230, 240]; // Números fictícios
+
+        const trace1 = {
+            x: meses,
+            y: acidentes,
+            type: 'bar',
+            marker: {
+                color: 'purple'
+            }
+        };
+
+        const data = [trace1];
+
+        const layout = {
+            title: 'Número de Acidentes com Automóveis em 2023',
+            xaxis: { title: 'Meses' },
+            yaxis: { title: 'Número de Acidentes' },
+        };
+
+        Plotly.newPlot('grafico-acidentes', data, layout);
+    </script>
+
+    
