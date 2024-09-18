@@ -13,11 +13,17 @@
     <header>
         <h1>Acidentes com automóveis em 2023</h1>
         <nav>
-            <a href="index.html">Mundo</a>
-            <a href="#">Minha escola</a>
-        </nav>
-    </header>
+            <a href="index.html"></a>
+            <a href="#"></a>
+        </nav>    
 
+    </header>
+    <section id="introducao" style="text-align: center;">
+        <h2>Introdução</h2>
+        <p>No ano de 2023, os acidentes com automóveis continuam a ser uma preocupação significativa em todo o mundo. Dados indicam que, apesar dos esforços para melhorar a segurança nas estradas, o número de incidentes permanece elevado. Fatores como distração ao volante, condições climáticas adversas e o aumento do tráfego contribuem para essa realidade alarmante. Este gráfico ilustra a tendência mensal dos acidentes, destacando a necessidade urgente de medidas preventivas eficazes.</p>
+    </section>
+    
+    
     <main class="graficos-section">
         <section id="graficos-container" class="graficos-container">
             <div id="grafico-acidentes"></div>
@@ -38,7 +44,7 @@
             y: acidentes,
             type: 'bar',
             marker: {
-                color: 'purple'
+                color: 'teal '
             }
         };
 
@@ -53,4 +59,4 @@
         Plotly.newPlot('grafico-acidentes', data, layout);
     </script>
 
-    
+

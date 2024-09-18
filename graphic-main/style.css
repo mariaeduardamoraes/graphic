@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 :root {
 
-    --cor-de-fundo: #131842;
-    --cor-principal: #4391f7;
+    --cor-de-fundo: #63a55bda;
+    --cor-principal: #000000;
     --cor-secundaria: #a361da;
     --fonte: "PT Sans", sans-serif;
-    --cor-barra: rgb(255, 255, 255);
+    --cor-barra: rgb(241, 250, 245);
 }
 
 body {
