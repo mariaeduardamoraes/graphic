@@ -16,35 +16,41 @@
             <a href="index.html"></a>
             <a href="#"></a>
         </nav>    
-
     </header>
+
     <section id="introducao" style="text-align: center;">
         <h2>Introdução</h2>
         <p>No ano de 2023, os acidentes com automóveis continuam a ser uma preocupação significativa em todo o mundo. Dados indicam que, apesar dos esforços para melhorar a segurança nas estradas, o número de incidentes permanece elevado. Fatores como distração ao volante, condições climáticas adversas e o aumento do tráfego contribuem para essa realidade alarmante. Este gráfico ilustra a tendência mensal dos acidentes, destacando a necessidade urgente de medidas preventivas eficazes.</p>
     </section>
     
-    
     <main class="graficos-section">
         <section id="graficos-container" class="graficos-container">
             <div id="grafico-acidentes"></div>
+
+            <!-- Nova introdução entre os gráficos -->
+            <section id="introducao-graficos" style="text-align: center; margin: 40px 0;">
+                <h2>Análise Comparativa</h2>
+                <p>Além de observar o número total de acidentes ao longo do ano, é importante analisar as diferenças entre os tipos de veículos envolvidos. O gráfico abaixo compara os acidentes envolvendo carros e motocicletas, fornecendo uma visão clara das tendências de cada categoria ao longo dos meses de 2023.</p>
+            </section>
+
+            <div id="grafico-comparacao"></div>
         </section>
     </main>
 
-    <footer>
-        <p>Desenvolvido por...</p>
-    </footer>
+    <footer></footer>
     
     <script type="module">
         // Dados corretos de acidentes
         const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
         const acidentes = [120, 150, 130, 170, 200, 180, 160, 190, 210, 220, 230, 240]; // Números fictícios
 
+        // Gráfico de barras - Acidentes totais
         const trace1 = {
             x: meses,
             y: acidentes,
             type: 'bar',
             marker: {
-                color: 'teal '
+                color: 'RoyalBlue'
             }
         };
 
@@ -57,6 +63,38 @@
         };
 
         Plotly.newPlot('grafico-acidentes', data, layout);
+
+        // Novo gráfico de barras - Comparação de tipos de veículos
+        const acidentesCarros = [80, 100, 90, 110, 140, 130, 120, 140, 160, 170, 180, 190]; // Dados fictícios para carros
+        const acidentesMotos = [40, 50, 40, 60, 70, 50, 40, 50, 60, 50, 60, 50]; // Dados fictícios para motos
+
+        const traceCarros = {
+            x: meses,
+            y: acidentesCarros,
+            type: 'bar',
+            name: 'Carros',
+            marker: { color: 'DarkOrchid' }
+        };
+
+        const traceMotos = {
+            x: meses,
+            y: acidentesMotos,
+            type: 'bar',
+            name: 'Motocicletas',
+            marker: { color: 'Fuchsia' }
+        };
+
+        const dataComparacao = [traceCarros, traceMotos];
+
+        const layoutComparacao = {
+            title: 'Comparação de Acidentes entre Carros e Motocicletas (2023)',
+            xaxis: { title: 'Meses' },
+            yaxis: { title: 'Número de Acidentes' },
+            barmode: 'group' // Define que as barras serão exibidas lado a lado
+        };
+
+        Plotly.newPlot('grafico-comparacao', dataComparacao, layoutComparacao);
     </script>
+</body>
 
-
+</html>
